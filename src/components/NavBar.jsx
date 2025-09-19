@@ -4,12 +4,12 @@ import SearchIcon from './icons/SearchIcon'
 import CartIcons from './icons/CartIcons'
 import HamBurgerIcon from './icons/HamBurgerIcon'
 
-function NavBar({ setIsCartSliderOpen }) {
+function NavBar({ setIsCartSliderOpen, setIsSearchBarOpen }) {
     return (
         <div className='flex justify-between items-center px-4 min-h-[64px]'>
             <img src={logo} className='w-[80px] h-[20px]' />
             <div className='flex items-center gap-4'>
-                <SearchIcon />
+                <SearchIcon setIsSearchBarOpen={setIsSearchBarOpen} />
                 <CartIcons setIsCartSliderOpen={setIsCartSliderOpen} />
                 <HamBurgerIcon />
             </div>
