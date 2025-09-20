@@ -13,7 +13,7 @@ function CloseIcon({ setIsSearchBarOpen, thinStroke = "", setIsSideMenuOpen }) {
       strokeLinecap="round"
       strokeLinejoin="round"
       className={`cursor-pointer stroke-[2px] ${thinStroke}`}
-      onClick={() => setIsSearchBarOpen(false)}
+    //   onClick={() => setIsSearchBarOpen(false)}
       onClick={() => setIsSideMenuOpen(false)}
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>

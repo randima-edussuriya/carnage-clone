@@ -6,6 +6,7 @@ import UserIcon from "./icons/UserIcon";
 import InstagramIcon from "./icons/InstagramIcon";
 import TiktokIcon from "./icons/TiktokIcon";
 import YouTubeIcon from "./icons/YouTubeIcon";
+import { motion } from "motion/react";
 
 const menuItems = [
   {
@@ -63,7 +64,19 @@ const menuItems = [
 function SideMenu({ isSideMenuOpen, setIsSideMenuOpen }) {
   if (!isSideMenuOpen) return null;
   return (
-    <div className="fixed top-0 z-10 w-full h-screen bg-black/40">
+    <motion.div
+      initial={{
+        x: 500,
+      }}
+      animate={{
+        x: isSideMenuOpen ? 0 : 500,
+      }}
+      transition={{
+        type: "tween",
+        duration: 0.5,
+      }}
+      className="fixed top-0 z-10 w-full h-screen bg-black/40"
+    >
       <div className="bg-white/95 h-full w-[80%] fixed top-0 right-0">
         <div className="flex justify-between items-center min-h-[64px] px-4">
           <img src={logo} alt="logo" className="h-[20px] w-[80px]" />
@@ -89,7 +102,7 @@ function SideMenu({ isSideMenuOpen, setIsSideMenuOpen }) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
