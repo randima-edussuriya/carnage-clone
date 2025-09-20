@@ -1,9 +1,9 @@
 import React from "react";
 
-function CartIcons({ setIsCartSliderOpen }) {
+function CartIcons({ setIsCartSliderOpen, noCursorPointer }) {
   return (
     <div
-      className="relative cursor-pointer"
+      className={`relative ${noCursorPointer ? "" : "cursor-pointer"}`}
       onClick={() => setIsCartSliderOpen(true)}
     >
       <svg
