@@ -64,20 +64,41 @@ const menuItems = [
 function SideMenu({ isSideMenuOpen, setIsSideMenuOpen }) {
   if (!isSideMenuOpen) return null;
   return (
-    <motion.div
-      initial={{
-        x: 500,
-      }}
-      animate={{
-        x: isSideMenuOpen ? 0 : 500,
-      }}
-      transition={{
-        type: "tween",
-        duration: 0.5,
-      }}
-      className="fixed top-0 z-10 w-full h-screen bg-black/40"
-    >
-      <div className="bg-white/95 h-full w-[80%] fixed top-0 right-0">
+    <>
+      {/* -------------------------------------------------------
+                backdrop of side menu
+        --------------------------------------------------------- */}
+      <motion.div
+        initial={{
+          opacity: 0,
+          zIndex: 0,
+        }}
+        animate={{
+          opacity: isSideMenuOpen ? 1 : 0,
+          zIndex: isSideMenuOpen ? 15 : 0,
+        }}
+        className="fixed top-0 w-full h-screen bg-black/40"
+      ></motion.div>
+
+      {/* -------------------------------------------------------
+                side menu
+        --------------------------------------------------------- */}
+      <motion.div
+        initial={{
+          x: 500,
+        }}
+        animate={{
+          x: isSideMenuOpen ? 0 : 500,
+        }}
+        transition={{
+          type: "tween",
+          duration: 0.4,
+        }}
+        className="bg-white/95 h-full w-[80%] fixed top-0 right-0 z-20"
+      >
+        {/* -------------------------------------------------------
+                side menu header
+        --------------------------------------------------------- */}
         <div className="flex justify-between items-center min-h-[64px] px-4">
           <img src={logo} alt="logo" className="h-[20px] w-[80px]" />
           <CloseIcon
@@ -85,6 +106,9 @@ function SideMenu({ isSideMenuOpen, setIsSideMenuOpen }) {
             setIsSideMenuOpen={setIsSideMenuOpen}
           />
         </div>
+        {/* -------------------------------------------------------
+                side menu contents
+        --------------------------------------------------------- */}
         <div className="h-full px-4 mt-2">
           {menuItems.length > 0 &&
             menuItems.map((item) => (
@@ -101,8 +125,8 @@ function SideMenu({ isSideMenuOpen, setIsSideMenuOpen }) {
             <YouTubeIcon />
           </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </>
   );
 }
 
