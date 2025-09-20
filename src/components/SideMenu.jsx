@@ -2,6 +2,10 @@ import React from 'react'
 import logo from '../assets/logo.jpg'
 import CloseIcon from './icons/CloseIcon'
 import SideMenuItem from './SideMenuItem'
+import UserIcon from './icons/UserIcon'
+import InstagramIcon from './icons/InstagramIcon'
+import TiktokIcon from './icons/TiktokIcon'
+import YouTubeIcon from './icons/YouTubeIcon'
 
 const menuItems = [
     {
@@ -25,15 +29,22 @@ const menuItems = [
 function SideMenu() {
     return (
         <div className='fixed top-0 z-10 w-full h-screen bg-black/40'>
-            <div className='bg-white/95 h-screen w-[80%] fixed top-0 right-0'>
+            <div className='bg-white/95 h-full w-[80%] fixed top-0 right-0'>
                 <div className='flex justify-between items-center min-h-[64px] px-4'>
                     <img src={logo} alt="logo" className='h-[20px] w-[80px]' />
                     <CloseIcon thinStroke='stroke-[1.5px]' />
                 </div>
-                {menuItems.length > 0 && menuItems.map(item => (
-                    <SideMenuItem name={item.name} subItem={item.subItem} />
-                ))}
-                <SideMenuItem name='Account' />
+                <div className='px-4 mt-2 h-full'>
+                    {menuItems.length > 0 && menuItems.map(item => (
+                        <SideMenuItem key={item.name} name={item.name} subItem={item.subItem} />
+                    ))}
+                    <SideMenuItem name='Account' leftIcon={<UserIcon />} noBorder />
+                    <div className='flex items-center gap-4'>
+                        <InstagramIcon />
+                        <TiktokIcon />
+                        <YouTubeIcon />
+                    </div>
+                </div>
             </div>
         </div>
     )
