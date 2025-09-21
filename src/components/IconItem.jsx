@@ -5,11 +5,11 @@ function IconItem({ icon }) {
   return (
     <motion.span
       variants={{
-        initial: {
+        closed: {
           opacity: 0,
           x: 30,
         },
-        animate: {
+        open: {
           opacity: 1,
           x: 0,
           transition: {

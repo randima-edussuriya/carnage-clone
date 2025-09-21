@@ -7,11 +7,11 @@ function SideMenuItem({ name, subItem, leftIcon, noBorder }) {
   return (
     <motion.div
       variants={{
-        initial: {
+        closed: {
           opacity: 0,
           x: 25,
         },
-        animate: {
+        open: {
           opacity: 1,
           x: 0,
           transition: {

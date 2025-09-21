@@ -6,7 +6,7 @@ import UserIcon from "./icons/UserIcon";
 import InstagramIcon from "./icons/InstagramIcon";
 import TiktokIcon from "./icons/TiktokIcon";
 import YouTubeIcon from "./icons/YouTubeIcon";
-import { motion } from "motion/react";
+import { motion, stagger } from "motion/react";
 import { animate } from "motion";
 import IconItem from "./IconItem";
 
@@ -112,14 +112,13 @@ function SideMenu({ isSideMenuOpen, setIsSideMenuOpen }) {
                 side menu contents
         --------------------------------------------------------- */}
         <motion.div
-          initial="initial"
-          animate={isSideMenuOpen ? "animate" : "initial"}
+          initial="closed"
+          animate={isSideMenuOpen ? "open" : "closed"}
           variants={{
-            initial: {},
-            animate: {
+            closed: {},
+            open: {
               transition: {
-                delayChildren: 0.22,
-                staggerChildren: 0.15,
+                delayChildren: stagger(0.1, { startDelay: 0.22 }),
               },
             },
           }}
