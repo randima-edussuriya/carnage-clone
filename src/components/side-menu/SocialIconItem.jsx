@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 
-function IconItem({ icon }) {
+function SocialIconItem({ icon }) {
   return (
     <motion.span
       variants={{
@@ -23,4 +23,4 @@ function IconItem({ icon }) {
   );
 }
 
-export default IconItem;
+export default SocialIconItem;

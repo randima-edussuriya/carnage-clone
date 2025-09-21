@@ -7,7 +7,7 @@ import InstagramIcon from "../icons/InstagramIcon";
 import TiktokIcon from "../icons/TiktokIcon";
 import YouTubeIcon from "../icons/YouTubeIcon";
 import { motion, stagger } from "motion/react";
-import IconItem from "./IconItem";
+import SocialIconItem from "./SocialIconItem";
 
 const menuItems = [
   {
@@ -133,9 +133,9 @@ function SideMenu({ isSideMenuOpen, setIsSideMenuOpen }) {
             ))}
           <SideMenuItem name="Account" leftIcon={<UserIcon />} noBorder />
           <div className="flex items-center gap-4">
-            <IconItem icon={<InstagramIcon />} />
-            <IconItem icon={<TiktokIcon />} />
-            <IconItem icon={<YouTubeIcon />} />
+            <SocialIconItem icon={<InstagramIcon />} />
+            <SocialIconItem icon={<TiktokIcon />} />
+            <SocialIconItem icon={<YouTubeIcon />} />
           </div>
         </motion.div>
       </motion.div>
