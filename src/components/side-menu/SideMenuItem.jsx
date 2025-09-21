@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PlusIcon from "../icons/PlusIcon";
 import MinusIcon from "../icons/MinusIcon";
 import { motion } from "motion/react";
+import PlusMinusIcon from "./PlusMinusIcon";
 
 function SideMenuItem({ name, subItem, leftIcon, noBorder }) {
   const [isSubItemOpen, setIsSubItemOpen] = useState(false);
@@ -31,7 +32,10 @@ function SideMenuItem({ name, subItem, leftIcon, noBorder }) {
           {name}
         </div>
         {subItem?.length > 0 && (
-          <span>{isSubItemOpen ? <MinusIcon /> : <PlusIcon />}</span>
+          <PlusMinusIcon
+            isSubItemOpen={isSubItemOpen}
+            icon={isSubItemOpen ? <MinusIcon /> : <PlusIcon />}
+          />
         )}
       </div>
       <motion.div
@@ -44,7 +48,7 @@ function SideMenuItem({ name, subItem, leftIcon, noBorder }) {
         transition={{
           type: "tween",
         }}
-        className="overflow-hidden px-3"
+        className="px-3 overflow-hidden"
       >
         <div className="pt-4">
           {subItem?.length > 0 &&
