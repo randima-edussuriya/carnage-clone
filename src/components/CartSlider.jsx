@@ -24,7 +24,7 @@ function CartSlider({ isCartSliderOpen, setIsCartSliderOpen }) {
           <span className="be-vietnam-pro-bold text-[12px] tracking-wider">
             My Cart
           </span>
-          <CartIcons noCursorPointer/>
+          <CartIcons noCursorPointer />
         </div>
         <div className="flex items-center justify-center w-full h-full">
           <div className="flex flex-col items-center -mt-16 gap-7">
