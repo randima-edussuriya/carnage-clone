@@ -1,6 +1,7 @@
 import React from "react";
 import CloseIcon from "./icons/CloseIcon";
 import { motion } from "motion/react";
+import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette";
 
 function SearchBar({ isSearchBarOpen, setIsSearchBarOpen }) {
   return (
@@ -24,7 +25,7 @@ function SearchBar({ isSearchBarOpen, setIsSearchBarOpen }) {
         type="text"
         placeholder="Search"
       />
-      <CloseIcon setIsSearchBarOpen={setIsSearchBarOpen} />
+      <CloseIcon handleClose={() => setIsSearchBarOpen(false)} />
     </motion.div>
   );
 }
