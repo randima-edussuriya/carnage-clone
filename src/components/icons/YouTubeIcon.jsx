@@ -7,7 +7,7 @@ function YouTubeIcon() {
       width="26"
       height="26"
       viewBox="0 0 24 24"
-      strokeWdth="1.5"
+      strokeWidth="1.5"
       stroke="currentColor"
       fill="none"
       strokeLinecap="round"
