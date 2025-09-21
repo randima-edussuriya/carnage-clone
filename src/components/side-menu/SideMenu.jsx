@@ -1,13 +1,12 @@
 import React from "react";
-import logo from "../assets/logo.jpg";
-import CloseIcon from "./icons/CloseIcon";
+import logo from "../../assets/logo.jpg";
+import CloseIcon from "../icons/CloseIcon";
 import SideMenuItem from "./SideMenuItem";
-import UserIcon from "./icons/UserIcon";
-import InstagramIcon from "./icons/InstagramIcon";
-import TiktokIcon from "./icons/TiktokIcon";
-import YouTubeIcon from "./icons/YouTubeIcon";
+import UserIcon from "../icons/UserIcon";
+import InstagramIcon from "../icons/InstagramIcon";
+import TiktokIcon from "../icons/TiktokIcon";
+import YouTubeIcon from "../icons/YouTubeIcon";
 import { motion, stagger } from "motion/react";
-import { animate } from "motion";
 import IconItem from "./IconItem";
 
 const menuItems = [
@@ -96,7 +95,7 @@ function SideMenu({ isSideMenuOpen, setIsSideMenuOpen }) {
           type: "tween",
           duration: 0.35,
         }}
-        className="bg-white/95 h-full w-[80%] fixed top-0 right-0 z-20"
+        className="bg-white/95 h-full w-[80%] fixed top-0 right-0 z-20 overflow-y-auto"
       >
         {/* -------------------------------------------------------
                 side menu header

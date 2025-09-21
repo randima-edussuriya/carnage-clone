@@ -3,7 +3,7 @@ import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import CartSlider from "./components/CartSlider";
 import SearchBar from "./components/SearchBar";
-import SideMenu from "./components/SideMenu";
+import SideMenu from "./components/side-menu/SideMenu";
 
 function App() {
   const [isCartSliderOpen, setIsCartSliderOpen] = useState(false);
