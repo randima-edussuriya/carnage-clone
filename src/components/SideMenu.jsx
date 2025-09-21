@@ -7,6 +7,8 @@ import InstagramIcon from "./icons/InstagramIcon";
 import TiktokIcon from "./icons/TiktokIcon";
 import YouTubeIcon from "./icons/YouTubeIcon";
 import { motion } from "motion/react";
+import { animate } from "motion";
+import IconItem from "./IconItem";
 
 const menuItems = [
   {
@@ -92,7 +94,7 @@ function SideMenu({ isSideMenuOpen, setIsSideMenuOpen }) {
         }}
         transition={{
           type: "tween",
-          duration: 0.4,
+          duration: 0.35,
         }}
         className="bg-white/95 h-full w-[80%] fixed top-0 right-0 z-20"
       >
@@ -103,13 +105,26 @@ function SideMenu({ isSideMenuOpen, setIsSideMenuOpen }) {
           <img src={logo} alt="logo" className="h-[20px] w-[80px]" />
           <CloseIcon
             thinStroke="stroke-[1.5px]"
-            setIsSideMenuOpen={setIsSideMenuOpen}
+            handleClose={() => setIsSideMenuOpen(false)}
           />
         </div>
         {/* -------------------------------------------------------
                 side menu contents
         --------------------------------------------------------- */}
-        <div className="h-full px-4 mt-2">
+        <motion.div
+          initial="initial"
+          animate={isSideMenuOpen ? "animate" : "initial"}
+          variants={{
+            initial: {},
+            animate: {
+              transition: {
+                delayChildren: 0.22,
+                staggerChildren: 0.15,
+              },
+            },
+          }}
+          className="h-full px-4 mt-2"
+        >
           {menuItems.length > 0 &&
             menuItems.map((item) => (
               <SideMenuItem
@@ -120,11 +135,11 @@ function SideMenu({ isSideMenuOpen, setIsSideMenuOpen }) {
             ))}
           <SideMenuItem name="Account" leftIcon={<UserIcon />} noBorder />
           <div className="flex items-center gap-4">
-            <InstagramIcon />
-            <TiktokIcon />
-            <YouTubeIcon />
+            <IconItem icon={<InstagramIcon />} />
+            <IconItem icon={<TiktokIcon />} />
+            <IconItem icon={<YouTubeIcon />} />
           </div>
-        </div>
+        </motion.div>
       </motion.div>
     </>
   );
