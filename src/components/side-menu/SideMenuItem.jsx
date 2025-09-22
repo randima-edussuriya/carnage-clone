@@ -38,6 +38,9 @@ function SideMenuItem({ name, subItem, leftIcon, noBorder }) {
           />
         )}
       </div>
+      {/* ---------------------------------------------------------
+            sub menu item
+      ------------------------------------------------------------- */}
       <motion.div
         initial={{
           height: 0,

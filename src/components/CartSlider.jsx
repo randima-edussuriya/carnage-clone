@@ -19,6 +19,9 @@ function CartSlider({ isCartSliderOpen, setIsCartSliderOpen }) {
       className="fixed top-0 z-10 flex items-center justify-center w-full h-screen bg-black/80"
     >
       <div className="bg-[#f3f3f3] w-[94%] h-[98%] relative">
+        {/* -------------------------------------------------------------
+              cart slider header
+        ----------------------------------------------------------------- */}
         <div className="flex items-center justify-between shadow-sm p-[10px]">
           <CloseIconWithBG setIsCartSliderOpen={setIsCartSliderOpen} />
           <span className="be-vietnam-pro-bold text-[12px] tracking-wider">
@@ -26,6 +29,9 @@ function CartSlider({ isCartSliderOpen, setIsCartSliderOpen }) {
           </span>
           <CartIcons noCursorPointer />
         </div>
+        {/* ---------------------------------------------------------
+              cart slider body
+        ------------------------------------------------------------- */}
         <div className="flex items-center justify-center w-full h-full">
           <div className="flex flex-col items-center -mt-16 gap-7">
             <span className="be-vietnam-pro-bold text-[12px] tracking-widest">
